@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  ssl:
+    key-store: classpath:danielKey.p12
+    key-store-password: danielKeyStorepass
+    keyStoreType: PKCS12
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  jpa: database-platform:org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://0.0.0.0:5432/hasura2
+    username: postgres
+    password: postgrespassword
+    driverClassName: org.postgresql.Driver
+  flyway:
+    baseline-on-migrate: true
+    schemas: daniel
+swagger:
+  api-info:
+    title: Api Documentation
+    description: desription
+    contact:
+      name: Daniel
+      url: https://guofan.page/
+      email: guofan.chen@gmail.com
+    version: 1
